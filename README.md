@@ -16,6 +16,8 @@ First of all, download base data using ```wget``` command and unzip it using ```
 wget https://www.muratkoklu.com/datasets/Grapevine_Leaves_Image_Dataset.zip
 unzip -q Grapevine_Leaves_Image_Dataset.zip 
 ```
+here is a sample of the base data:
+![base_data](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/19f152ac4e8d782e7c1ade6fec6bcb3ce843a540/readme_images/base_data.png)
 
 Then, to create an out-of-sample set with a small python script, we randomly chose and moved 20\% of each class to the new directory. Then our data was ready to load, loaded as TensorFlow datasets with ``` tf.keras.utils.image_dataset_from_directory ``` function.
 Then because the margins of the images are white and white pixels are large in value (RGB code: 255,255,255) but contain no information, I tried to transfer the colors to turn the useless white into black (RGB code: 0,0,0) by the map method below:
@@ -32,6 +34,8 @@ layers.RandomFlip("vertical"),
 layers.RandomZoom(height_factor=(-0.2,0.2), width_factor=(-0.2,0.2),fill_mode='constant', fill_value=0),
 layers.RandomRotation(0.3, fill_mode='constant', fill_value=0)
 ```
+here is a sample of the augmented transformed data:
+![augmented_transformed_data](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/19f152ac4e8d782e7c1ade6fec6bcb3ce843a540/readme_images/transformed_data.png)
 
 Although I used these layers inside my architecture to use the true power of randomness, I stored simple augmented data in a dataset to somehow save the GPU processor and time in the try and error phases.
 
