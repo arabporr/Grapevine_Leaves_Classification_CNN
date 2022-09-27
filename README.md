@@ -3,7 +3,7 @@
 ## Introduction
 This project was initially a part of my data mining course, but then I found it so exciting and started to read about it and do some research on it by taking advice from my professor [Dr. H Sajedi](https://scholar.google.com/citations?user=YHjV73oAAAAJ&hl=en). So, I tried different things I learned on it, like designing my own network and different methods to get a better result by augmenting data in various ways or exploiting other types of neural networks.
 
-Note!: If you had any problem in opening any of the ```.ipynb``` files, I exported them as ```.pdf``` files available in ["pdf_files" directory](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/tree/main/pdf_files).
+> **Note:** If you had problem in opening any of the ```.ipynb``` files, I exported them as ```.pdf``` files available in ["pdf_files" directory](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/tree/main/pdf_files).
 
 ## Methodology
 I think to make it easier to follow and faster to search; it is better to explain what I did in four parts:
@@ -59,7 +59,7 @@ Afterward, in the training phase, I used the ```adam``` optimizer and ```SparseC
 
 ![My_model_loss](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/2162b4dc8e896047749c0abaf9db3ee6e2273ecc/readme_images/My_model_train_loss.png)
 
-In the end, I tried to test the model with the unseen out-of-sample data to see whether the results were real or not [overfitting]. For this test, we show the model 100 images [20 from each class] and check the predicted class with the real one. The result in the table below shows great work, and a good thing to be mentioned is due to the confusion matrix, the learning was not biased, which is very important in classification tasks.
+In the end, I tried to test the model with the unseen out-of-sample data to see whether the results were real or not [overfitting]. For this test, we show the model 100 images [20 from each class] and check the predicted class with the real one. The result in the table below shows great work, and a good thing to be mentioned is <ins>due to the confusion matrix, the learning was not biased</ins>, which is very important in classification tasks.
 - Result table:
 
 ![My_model_res](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/2162b4dc8e896047749c0abaf9db3ee6e2273ecc/readme_images/My_model_result.png) 
