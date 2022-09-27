@@ -3,6 +3,8 @@
 ## Introduction
 This project was initially a part of my data mining course, but then I found it so exciting and started to read about it and do some research on it by taking advice from my professor [Dr. H Sajedi](https://scholar.google.com/citations?user=YHjV73oAAAAJ&hl=en). So, I tried different things I learned on it, like designing my own network and different methods to get a better result by augmenting data in various ways or exploiting other types of neural networks.
 
+Note!: If you had any problem in opening any of the ```.ipynb``` files, I exported them as ```.pdf``` files available in ["pdf_files" directory](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/tree/main/pdf_files).
+
 ## Methodology
 I think to make it easier to follow and faster to search; it is better to explain what I did in four parts:
 - Data and data augmentation
@@ -16,7 +18,8 @@ First of all, download base data using ```wget``` command and unzip it using ```
 wget https://www.muratkoklu.com/datasets/Grapevine_Leaves_Image_Dataset.zip
 unzip -q Grapevine_Leaves_Image_Dataset.zip 
 ```
-here is a sample of the base data:
+Here is a sample of the base data:
+
 ![base_data](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/19f152ac4e8d782e7c1ade6fec6bcb3ce843a540/readme_images/base_data.png)
 
 Then, to create an out-of-sample set with a small python script, we randomly chose and moved 20\% of each class to the new directory. Then our data was ready to load, loaded as TensorFlow datasets with ``` tf.keras.utils.image_dataset_from_directory ``` function.
@@ -27,16 +30,24 @@ validation_data2 = validation_data.map(lambda x, y: (255-x, y))
 test_data2 = test_data.map(lambda x, y: (255-x, y))
 ```
 
-Afterward, since rotating, flipping, or zooming on an image, its class doesn't change; I tried to augment the base data with newly generated randomly changed images. 
+Afterward, since rotating, flipping, or zooming on an image, its class does not change; I tried to augment the base data with newly generated randomly changed images. 
 ```
 layers.RandomFlip("horizontal"),
 layers.RandomFlip("vertical"),
 layers.RandomZoom(height_factor=(-0.2,0.2), width_factor=(-0.2,0.2),fill_mode='constant', fill_value=0),
 layers.RandomRotation(0.3, fill_mode='constant', fill_value=0)
 ```
-here is a sample of the augmented transformed data:
+Here is a sample of the augmented transformed data:
+
 ![augmented_transformed_data](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/cd56a8cc8f3b62388f2f54701bfe37d810a01495/readme_images/transformed_data.png)
 
 Although I used these layers inside my architecture to use the true power of randomness, I stored simple augmented data in a dataset to somehow save the GPU processor and time in the try and error phases.
 
-### My model
+### My architecture
+In this part which is available [here!](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/f16cf69a86498c3d848cabb5ef6b38390a61f354/My_Own_Model.ipynb); What I did was creating a model starting with 3 data augmentation layers to prevent from overfitting and also provide better learning, then 12 convolution and pooling layers to extracting every little information, and finally after flattening, five dense layers were in charge of classification.
+
+A more detailed summary of the model is shown below:
+
+![Model_Summary](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/f16cf69a86498c3d848cabb5ef6b38390a61f354/readme_images/My_architecture.png)
+
+
