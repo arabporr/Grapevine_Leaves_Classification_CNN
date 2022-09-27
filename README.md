@@ -7,10 +7,10 @@ This project was initially a part of my data mining course, but then I found it 
 
 ## Methodology
 I think to make it easier to follow and faster to search; it is better to explain what I did in four parts:
-- Data and data augmentation
-- My own model architecture
-- Pre-trained models
-- Denoising and autoencoder networks
+- [Data and data augmentation](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/main/README.md#data)
+- [My own model architecture](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/main/README.md#my-architecture)
+- [Pre-trained models](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/main/README.md#pre-trained-models)
+- [Denoising and autoencoder networks](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/main/README.md#exploiting-denoising-and-autoencoder-networks)
 
 ### Data
 First of all, download base data using ```wget``` command and unzip it using ```unzip``` it as below:
@@ -99,7 +99,6 @@ For the denoising part, I firstly created a noisy version of each image in the a
 
 ![Denoising_architecture](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/80269548473e115e3be2744efd1c1b888202f706/readme_images/Denoising_arc.png)
 
-
 - Denoising sample output: 
 
 ![Denoising_sample](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/80269548473e115e3be2744efd1c1b888202f706/readme_images/Denoising_sample.png)
@@ -120,7 +119,6 @@ After all of this, I trained the model with 100 epochs of data, and what I got w
 
 ![Denoising_train_acc](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/80269548473e115e3be2744efd1c1b888202f706/readme_images/Denoising_train_acc.png)
 
-
 - The results table:
 
 ![Denoising_result](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/80269548473e115e3be2744efd1c1b888202f706/readme_images/Denoising_result.png)
@@ -140,6 +138,7 @@ The results table:
 ![AutoencoderResNet_result](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/fbf7dc007b70d2cac90a05903b06eafae14902ee/readme_images/AutoencoderResNet_result.png) 
 
 ## References
+
 1. [A CNN-SVM study based on selected deep features for grapevine leaves classification](https://www.sciencedirect.com/science/article/abs/pii/S0263224121013142?via%3Dihub)
 
 2. [Image denoising method based on a deep convolution neural network](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/iet-ipr.2017.0389)
