@@ -83,3 +83,12 @@ You can find the codes, accuracy, and loss curves for each model in the notebook
 - Pre-trained models <ins>accuracy on validation data during training phase</ins>:
 
 ![Pre_trained_val_acc](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/d2ff8940ee9fc386b239ca71bcb8cba21b2cfd13/readme_images/Pre_trained_val_acc.png)
+
+To sum up, what I found out was that ```Xception```, ```InceptionV3```, and ```InceptionResNetV2``` was so bad and weren't even close to the others. But on the other hand, both the VGG and ResNet networks worked quite well and ended up with accuracies of around 80 percent. However, The best model was ResNet152 which reached 84\% on unseen out-of-sample data!
+
+- The chart below comapred the accuracy of pre-trained models on out-of-sample data:
+
+![Pre_trained_results](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/42c7c7172d2dff170d050420e0eb2eaabc690e8c/readme_images/Pre_trained_resualts.png)
+
+
+
