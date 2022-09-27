@@ -35,7 +35,7 @@ layers.RandomZoom(height_factor=(-0.2,0.2), width_factor=(-0.2,0.2),fill_mode='c
 layers.RandomRotation(0.3, fill_mode='constant', fill_value=0)
 ```
 here is a sample of the augmented transformed data:
-![augmented_transformed_data](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/19f152ac4e8d782e7c1ade6fec6bcb3ce843a540/readme_images/base_data.png)
+![augmented_transformed_data](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/cd56a8cc8f3b62388f2f54701bfe37d810a01495/readme_images/transformed_data.png)
 
 Although I used these layers inside my architecture to use the true power of randomness, I stored simple augmented data in a dataset to somehow save the GPU processor and time in the try and error phases.
 
