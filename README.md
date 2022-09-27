@@ -121,15 +121,25 @@ After all of this, I trained the model with 100 epochs of data, and what I got w
 ![Denoising_train_acc](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/80269548473e115e3be2744efd1c1b888202f706/readme_images/Denoising_train_acc.png)
 
 
-- The result table:
+- The results table:
 
 ![Denoising_result](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/80269548473e115e3be2744efd1c1b888202f706/readme_images/Denoising_result.png)
 
+For the autoencoder part, the situation was much worse, and despite my endeavor to make a good network, the best model's output looked like a faded purple circle which clearly missed so much information.
 
- 
+- Autoencoder output:
+
+![Autoencoder_output](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/fbf7dc007b70d2cac90a05903b06eafae14902ee/readme_images/Autoencoder.png)
+
+> The images in the first row are the actual images, and the images in the second row are the reconstructed form of the encoded version of the ones above.
+
+With what we see above, it is expected not to get a good result. Like the denoising part, I used the ```ResNet152``` here too. For the report's sake, I bring the results below, although its accuracy is just a little bit more than random answering.
+
+The results table:
+
+![AutoencoderResNet_result](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/fbf7dc007b70d2cac90a05903b06eafae14902ee/readme_images/AutoencoderResNet_result.png) 
+
 ## References
 1. [A CNN-SVM study based on selected deep features for grapevine leaves classification](https://www.sciencedirect.com/science/article/abs/pii/S0263224121013142?via%3Dihub)
 
 2. [Image denoising method based on a deep convolution neural network](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/iet-ipr.2017.0389)
-
-
