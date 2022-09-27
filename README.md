@@ -18,7 +18,7 @@ First of all, download base data using ```wget``` command and unzip it using ```
 wget https://www.muratkoklu.com/datasets/Grapevine_Leaves_Image_Dataset.zip
 unzip -q Grapevine_Leaves_Image_Dataset.zip 
 ```
-Here is a sample of the base data:
+- Here is a sample of the base data:
 
 ![base_data](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/19f152ac4e8d782e7c1ade6fec6bcb3ce843a540/readme_images/base_data.png)
 
@@ -37,17 +37,30 @@ layers.RandomFlip("vertical"),
 layers.RandomZoom(height_factor=(-0.2,0.2), width_factor=(-0.2,0.2),fill_mode='constant', fill_value=0),
 layers.RandomRotation(0.3, fill_mode='constant', fill_value=0)
 ```
-Here is a sample of the augmented transformed data:
+- Here is a sample of the augmented transformed data:
 
 ![augmented_transformed_data](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/cd56a8cc8f3b62388f2f54701bfe37d810a01495/readme_images/transformed_data.png)
 
 Although I used these layers inside my architecture to use the true power of randomness, I stored simple augmented data in a dataset to somehow save the GPU processor and time in the try and error phases.
 
 ### My architecture
-In this part which is available [here!](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/f16cf69a86498c3d848cabb5ef6b38390a61f354/My_Own_Model.ipynb); What I did was creating a model starting with 3 data augmentation layers to prevent from overfitting and also provide better learning, then 12 convolution and pooling layers to extracting every little information, and finally after flattening, five dense layers were in charge of classification.
+In this part which is available [here!](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/f16cf69a86498c3d848cabb5ef6b38390a61f354/My_Own_Model.ipynb); What I did was creating a model starting with 3 data augmentation layers to prevent from overfitting and also provide better learning, then 12 convolution and pooling layers to extracting every little information, and finally after flattening, five dense layers were in charge of classification. I used a bunch of different architectures and changed each one many times to end up with this result, which is good enough to be compared with famous networks on this data. 
 
-A more detailed summary of the model is shown below:
+- A more detailed summary of the model is shown below:
 
 ![Model_Summary](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/f16cf69a86498c3d848cabb5ef6b38390a61f354/readme_images/My_architecture.png)
 
+Afterward, in the training phase, I used the ```adam``` optimizer and ```SparseCategoricalCrossentropy``` loss function to train the network for 200 epochs and a batch size of 32. The accuracy and loss during the training is provided below:
+- accuracy curve
+
+![My_model_acc](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/2162b4dc8e896047749c0abaf9db3ee6e2273ecc/readme_images/My_model_train_acc.png)
+
+- loss curve
+
+![My_model_loss](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/2162b4dc8e896047749c0abaf9db3ee6e2273ecc/readme_images/My_model_train_loss.png)
+
+In the end, I tried to test the model with the unseen out-of-sample data to see whether the results were real or not [overfitting]. For this test, we show the model 100 images [20 from each class] and check the predicted class with the real one. The result in the table below shows great work, and a good thing to be mentioned is due to the confusion matrix, the learning was not biased, which is very important in classification tasks.
+- Result table:
+
+![My_model_res](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/2162b4dc8e896047749c0abaf9db3ee6e2273ecc/readme_images/My_model_result.png) 
 
