@@ -62,5 +62,14 @@ Afterward, in the training phase, I used the ```adam``` optimizer and ```SparseC
 In the end, I tried to test the model with the unseen out-of-sample data to see whether the results were real or not [overfitting]. For this test, we show the model 100 images [20 from each class] and check the predicted class with the real one. The result in the table below shows great work, and a good thing to be mentioned is <ins>due to the confusion matrix, the learning was not biased</ins>, which is very important in classification tasks.
 - Result table:
 
-![My_model_res](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/2162b4dc8e896047749c0abaf9db3ee6e2273ecc/readme_images/My_model_result.png) 
+![My_model_res](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/2162b4dc8e896047749c0abaf9db3ee6e2273ecc/readme_images/My_model_train_loss.png) 
+
+### Pre-trained models
+In this part, which codes are available [here!](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/4474829f94c6067b1f785c3e352862b33e7ab7ff/Pre-Trained_Models.ipynb), I tried different models including ```Xception```, ```VGG16```, ```VGG19```, ```ResNet50```, ```ResNet101```, ```ResNet152```, ```InceptionV3```, and ```InceptionResNetV2``` in the same structure in order to find the best model. Consequently, test it with different seeds and compare its results with my model.
+
+The architecture I used starts with three Keras data augmentation layers in which the input data is randomly rotated, flipped, or zoomed, then the model itself has been placed, and finally, three dense layers for classifying the model's output into our desired five classes.
+
+- As an example, you can see more details for the VGG16 model summary below:
+
+![Pre_trained_arc_vgg16](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/caf031eb519eb3d06b71e112b90bc7337dff9cac/readme_images/Pre_trained_VGG16_arc.PNG) 
 
