@@ -91,7 +91,7 @@ To sum up, what I found out was that ```Xception```, ```InceptionV3```, and ```I
 ![Pre_trained_results](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/42c7c7172d2dff170d050420e0eb2eaabc690e8c/readme_images/Pre_trained_resualts.png)
 
 ### Exploiting denoising and autoencoder networks
-The idea of this part (codes are available here!) was to create a model in which the important parts of images are found and emphasized before the image goes into our classifier part of the network, so maybe this makes the model focus on essential pieces of information only and provides us a better result. Which unfortunately didn't happen.
+The idea of this part (codes are available [here!](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/cd3122c2b9531cd72b5eefdc7f9d0946800543ac/Denoising_And_Encoding_Networks.ipynb)) was to create a model in which the important parts of images are found and emphasized before the image goes into our classifier part of the network, so maybe this makes the model focus on essential pieces of information only and provides us a better result. Which unfortunately didn't happen.
 
 For the denoising part, I firstly created a noisy version of each image in the augmented dataset with a noise factor of 0.3 and a mean of 127. Afterward, I trained my network with these images for 30 epochs. Even though I spent a week working on it, I couldn't manage to get a good result. The model summary and a sample of its output are presented below:
 
@@ -114,6 +114,19 @@ After creating this denoising network, it was time to attach it to the rest of t
 
 > The layer sequential_10 is the previously trained denoising network.
 
+After all of this, I trained the model with 100 epochs of data, and what I got was this accuracy curve during the training phase, which shows us that the model learning converged on about 70\%.
+
+- The accuracy curve:
+
+![Denoising_train_acc](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/80269548473e115e3be2744efd1c1b888202f706/readme_images/Denoising_train_acc.png)
+
+
+- The result table:
+
+![Denoising_result](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/80269548473e115e3be2744efd1c1b888202f706/readme_images/Denoising_result.png)
+
+
+ 
 ## References
 1. [A CNN-SVM study based on selected deep features for grapevine leaves classification](https://www.sciencedirect.com/science/article/abs/pii/S0263224121013142?via%3Dihub)
 
