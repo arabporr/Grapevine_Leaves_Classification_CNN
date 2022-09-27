@@ -73,3 +73,13 @@ The architecture I used starts with three Keras data augmentation layers in whic
 
 ![Pre_trained_arc_vgg16](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/caf031eb519eb3d06b71e112b90bc7337dff9cac/readme_images/Pre_trained_VGG16_arc.PNG) 
 
+You can find the codes, accuracy, and loss curves for each model in the notebook with more details. Also below, you can see and compare all of them at once:
+
+- Pre-trained models <ins>accuracy on training data during training phase</ins>:
+
+![Pre_trained_train_acc](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/d2ff8940ee9fc386b239ca71bcb8cba21b2cfd13/readme_images/Pre_trained_train_acc.png)
+
+
+- Pre-trained models <ins>accuracy on validation data during training phase</ins>:
+
+![Pre_trained_val_acc](https://github.com/arabporr/Grapevine_Leaves_Classification_CNN/blob/d2ff8940ee9fc386b239ca71bcb8cba21b2cfd13/readme_images/Pre_trained_val_acc.png)
